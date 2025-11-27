@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* background: #000; */
+  color: white;
+}
+/* Cursor circle */
+.cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #b927fc;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width 0.1s ease, height 0.55s ease, border-color 0.1s ease;
+}
+.typing-text {
+  color: #a26bff;
+  font-weight: 600;
+  font-size: 1.75rem;
+  border-right: 3px solid #a26bff;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* fade in */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.8s ease-out, transform 1.8s ease-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.na {
+  color: #fff;
+  text-decoration: none;
+}
+.na:hover {
+  color: #b927fc;
+  transition: ease-in-out 0.5s;
+}
+
+/* Intro Animation */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1.2s ease-in-out;
+  z-index: 1000;
+}
+
+.logo-header {
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.6s;
+}
+
+.logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.6s;
+}
+
+body {
+  background: black;
+}
+
+/* Intro Animation */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1.2s ease-in-out;
+  z-index: 1000;
+}
+
+.logo-header {
+  color: #b927fc;
+  font-size: 5rem;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.6s;
+}
+
+.logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.6s;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+.brand {
+  text-decoration: none;
+  color: white;
+}
+.brand:hover {
+  color: #b927fc;
+  transition: ease-in-out 0.5s;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  height: 3px;
+  width: 26px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Main Section */
+#main {
+  padding-top: 120px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+#main.visible {
+  opacity: 1;
+}
+#main p {
+  font-size: 2rem;
+  color: white;
+}
+
+/* navbar */
+
+nav {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 1;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: #ffffff;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
+.menubar {
+  position: fixed;
+  top: 0;
+  left: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30%;
+  height: fit-content;
+  padding: 8% 0;
+  background: rgba(0, 0, 0, 0.83);
+  transition: all 0.5s ease-in;
+  z-index: 5;
+}
+.active {
+  left: 0;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+.menubar ul li {
+  margin-bottom: 32px;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+  .logo-header {
+    font-size: 3rem;
+  }
+  .cursor-circle {
+    display: none;
+  }
+
+}
+
+#main div{
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+
+  @media screen and (max-width: 500px) {
+  #main div{
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}
+
+
+.pr-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(187, 134, 252, 0.7);
+}
+
+.pr-img {
+  transition: 0.4s ease;
+}
+.row-sk{
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+#skil{
+  margin-top: 5%;
+}
+.skill-icon{
+  width: 100px;
+  height: 90px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.skill-icon {
+  transition: 0.4s ease;
+}
+
+.skill-icon:hover {
+  transform: rotate(3deg) translateY(-6px);
+  box-shadow: 0 10px 25px rgba(171, 6, 248, 0.829);
+  
+}
+
+ /* education */
+
+@media screen and (min-width: 800px) {
+  .edu-card {
+    width: 750px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+ .edu-card {
+  width: 800px;
+  margin-top: 10%;
+  background: #000;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 0px rgba(255,255,255,0.1);
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0px 0px 30px rgba(255,255,255,0.4),
+    0px 10px 55px rgba(0,0,0,0.8);
+    z-index: 1;
+}
+
+/* Title style to match screenshot */
+.edu-title {
+
+  font-family: "Georgia", serif;
+  text-shadow: 0 0 3px #fff;
+}
+#edtitle{
+  margin-bottom: 10%;
+}
+
+
+/* project */
+
+#p-cd {
+  transition: 0.4s ease;
+}
+
+#p-cd:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(187, 134, 252, 0.7);
+}
